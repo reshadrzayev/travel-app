@@ -1,0 +1,15 @@
+.place-details{
+    .place-img{
+        object-fit: contain;
+    }
+
+    .cuisine{
+        flex-wrap: wrap;
+        span{
+            padding: 5px;
+            font-size: 13px;
+            border-radius: 5px;
+            background-color: rgb(223, 223, 223);
+        }
+    }
+}

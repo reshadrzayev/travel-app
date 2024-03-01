@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+*{
+    box-sizing: border-box
+}
+
+@import 'header';
+@import 'map';
+@import 'list';
+@import 'loader';
+@import 'alert';
+@import 'placeDetails';
+
+
+
