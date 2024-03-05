@@ -1,12 +1,14 @@
 import React from 'react'
 
-const PlaceDetails = ({ place }) => {
-  console.log(place);
+const PlaceDetails = ({ place, refProp, selected }) => {
+  // console.log(place);
 
   const Rating = () => {
     return <i class="fa-solid fa-star"></i>
   }
 
+  if(selected) refProp?.current?.scrollIntoView({behavior:"smooth", blokc:"start"})
+  
 
 
   return (
