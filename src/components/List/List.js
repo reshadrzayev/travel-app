@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useEffect,createRef} from 'react'
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 import Loader from '../Loader/Loader'
 import { useState } from 'react'
 
-const List = ({ places }) => {
+const List = ({ places, childClicked }) => {
+
+
+  const [elRefs,setElRefs] = useState([])
+
+  useEffect(() => {
+    const refs = Array(places?.length).fill().map((_,i)=>elRefs[i] || createRef())
+    setElRefs(refs)
+  }, [places]);
 
   return (
     <div className="menulist">
@@ -11,7 +19,12 @@ const List = ({ places }) => {
         {
           places?.map((data, i) => {
             return (
-              <PlaceDetails key={i} place={data}/>
+              <div ref={elRefs[i]}>
+              <PlaceDetails key={i} place={data}
+                selected={Number(childClicked) === i}
+                refProp = {elRefs[i]}
+              />
+              </div>
             )
           })
         }

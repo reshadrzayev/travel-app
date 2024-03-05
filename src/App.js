@@ -18,6 +18,8 @@ function App() {
 
     const [error, setError] = useState({ message: '', status: false })
 
+    const [childClicked,setChildClicked] = useState(null)
+
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((data) => {
             setCoords({ lat: data.coords.latitude, lng: data.coords.longitude })
@@ -38,10 +40,10 @@ function App() {
 
                 <div className="row d-flex">
                     <div className="col-xl-3 col-md-3 col-4">
-                        {visible == true ? <Loader /> : <List places={places?.data} />}
+                        {visible == true ? <Loader /> : <List places={places?.data} childClicked={childClicked}/>}
                     </div>
                     <div className="col-xl-9 col-md-9 col-8">
-                        <Map coords={coords} setCoords={setCoords} setBounds={setBounds} places={places}/>
+                        <Map setChildClicked={setChildClicked} coords={coords} setCoords={setCoords} setBounds={setBounds} places={places}/>
                     </div>
                 </div>
 
