@@ -39,10 +39,10 @@ function App() {
             <div className="container-fluid w-100 py-4">
 
                 <div className="row d-flex">
-                    <div className="col-xl-3 col-md-3 col-4">
+                    <div className="col-xl-3 col-md-12 col-12">
                         {visible == true ? <Loader /> : <List places={places?.data} childClicked={childClicked}/>}
                     </div>
-                    <div className="col-xl-9 col-md-9 col-8">
+                    <div className="col-xl-9 col-md-12 col-12">
                         <Map setChildClicked={setChildClicked} coords={coords} setCoords={setCoords} setBounds={setBounds} places={places}/>
                     </div>
                 </div>

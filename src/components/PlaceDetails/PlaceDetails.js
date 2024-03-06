@@ -9,12 +9,7 @@ const PlaceDetails = ({ place, refProp, selected }) => {
 
   if(selected) refProp?.current?.scrollIntoView({behavior:"smooth", blokc:"start"})
   
-
-
   return (
-    // <div className='place-detail card'>
-    //   {place.name}
-    // </div>
     <div className="card place-details my-4" style={{ width: "18rem;" }}>
       <img className="card-img-top place-img" src={place.photo ? place.photo.images.medium.url : 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600'} alt={place.name} />
       <div className="card-body">
